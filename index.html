@@ -16,21 +16,36 @@
             margin-top: 20px;
         }
 
-        iframe {
-            width: 350px;
+        /* Dialogflow Messenger Customization */
+        df-messenger {
+            --df-messenger-bot-message: #f1f1f1;
+            --df-messenger-user-message: #4CAF50;
+            --df-messenger-button-titlebar-color: #4CAF50;
+            --df-messenger-font-color: #000;
+            --df-messenger-chat-background-color: #fff;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 999;
+            width: 400px;
             height: 500px;
-            border: none;
-            margin-top: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Hide default floating button */
+        df-messenger::part(button) {
+            display: none;
         }
     </style>
 </head>
 
 <body>
     <h1>Welcome to Yummy Restaurant Chatbot</h1>
-    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script> <df-messenger
-        intent="WELCOME" chat-title="yummy-restaurant" agent-id="8c297342-0857-42b1-8eb9-04b75c114029"
+
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <df-messenger intent="WELCOME" chat-title="yummy-restaurant" agent-id="8c297342-0857-42b1-8eb9-04b75c114029"
         language-code="en"></df-messenger>
 </body>
 
